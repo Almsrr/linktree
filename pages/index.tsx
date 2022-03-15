@@ -7,6 +7,7 @@ import profilePhoto from "../assets/images/palas-pingpong.jpeg";
 
 import Account from "../shared/models/Account";
 import LinksList from "../components/Links/LinksList";
+import Footer from "../components/Footer/Footer";
 
 const Home: NextPage<Account> = ({ name, bio, links }) => {
   return (
@@ -26,6 +27,7 @@ const Home: NextPage<Account> = ({ name, bio, links }) => {
           <main>
             <LinksList links={links} />
           </main>
+          <Footer />
         </div>
       </div>
     </>
