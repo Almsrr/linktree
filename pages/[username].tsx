@@ -1,19 +1,19 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-import styles from "../styles/Home.module.css";
-import profilePhoto from "../assets/images/palas-pingpong.jpeg";
+import styles from "../styles/Linktree.module.css";
+import profilePhoto from "../assets/images/ping-pod-profile-img.webp";
 
 import Account from "../shared/models/Account";
 import LinksList from "../components/Links/LinksList";
 import Footer from "../components/Footer/Footer";
 
-const Home: NextPage<Account> = ({ name, bio, links }) => {
+const LinktreePage: NextPage<Account> = ({ name, bio, links }) => {
   return (
     <>
       <Head>
-        <title>Linktree</title>
+        <title>Linktree - {name}</title>
       </Head>
       <div className={styles.page}>
         <div className={styles.container}>
@@ -34,8 +34,11 @@ const Home: NextPage<Account> = ({ name, bio, links }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async context => {
   const fs = require("fs");
+
+  // Retrieve data for specific account by username
+  // context
 
   const rawData = await fs.readFileSync("data/seed.json");
   const data = JSON.parse(rawData);
@@ -45,4 +48,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default LinktreePage;
