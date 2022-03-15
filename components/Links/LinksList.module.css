@@ -1,0 +1,10 @@
+.text {
+  text-align: center;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

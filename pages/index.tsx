@@ -6,13 +6,13 @@ import styles from "../styles/Home.module.css";
 import profilePhoto from "../assets/images/palas-pingpong.jpeg";
 
 import Account from "../shared/models/Account";
+import LinksList from "../components/Links/LinksList";
 
 const Home: NextPage<Account> = ({ name, bio, links }) => {
   return (
     <>
       <Head>
         <title>Linktree</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.page}>
         <div className={styles.container}>
@@ -23,6 +23,9 @@ const Home: NextPage<Account> = ({ name, bio, links }) => {
             <h1 className={styles.name}>{name}</h1>
             <p className={styles.bio}>{bio}</p>
           </header>
+          <main>
+            <LinksList links={links} />
+          </main>
         </div>
       </div>
     </>
