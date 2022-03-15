@@ -1,0 +1,24 @@
+{
+  "account": {
+    "name": "The Ping Pod!",
+    "username": "@pingpod",
+    "bio": "Listen, subscribe, read!",
+    "links": [
+      {
+        "id": 1,
+        "title": "Shop this season's merch",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "id": 2,
+        "title": "Subscribe to the newsletter",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "id": 3,
+        "title": "Support our pod!",
+        "url": "https://www.facebook.com"
+      }
+    ]
+  }
+}
