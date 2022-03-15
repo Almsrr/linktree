@@ -6,6 +6,27 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Hind Vadodara", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+}
+
+.cover-bg {
+  background-color: rgb(209, 70, 159, 0.6);
+  position: relative;
+  z-index: auto;
+}
+
+.cover-bg::before {
+  content: "";
+  background-image: url("../assets//images/PingPod-2.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
