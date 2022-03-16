@@ -8,26 +8,20 @@ import coverImage from "../../assets/images/PingPod-2.jpeg";
 
 interface LayoutProps {
   title: string;
-  imageURL: string;
   name: string;
   username: string;
   bio: string;
 }
 
 const Layout: FC<LayoutProps> = props => {
-  const { title, imageURL, name, username, bio, children } = props;
+  const { title, name, username, bio, children } = props;
   return (
     <>
       <SEO title={title} />
       <Cover img={coverImage.src}>
         <Page>
           <Container>
-            <Header
-              image={imageURL}
-              name={name}
-              username={username}
-              bio={bio}
-            />
+            <Header name={name} username={username} bio={bio} />
             {children}
             <Footer />
           </Container>

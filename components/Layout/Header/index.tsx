@@ -2,18 +2,19 @@ import Image from "next/image";
 import { FC } from "react";
 import styled from "styled-components";
 
+import profileImg from "../../../assets/images/pingpod.webp";
+
 interface HeaderProps {
-  image: string;
   name: string;
   username: string;
   bio: string;
 }
 
-const Header: FC<HeaderProps> = ({ image, name, username, bio }) => {
+const Header: FC<HeaderProps> = ({ name, username, bio }) => {
   return (
     <Container>
       <Image
-        src={image}
+        src={profileImg}
         width={100}
         height={100}
         alt={`${username}-profile-image`}

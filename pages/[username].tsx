@@ -4,21 +4,9 @@ import Account from "../types/Account";
 import Layout from "../components/Layout";
 import LinksList from "../components/LinksList";
 
-const LinktreePage: NextPage<Account> = ({
-  imageURL,
-  name,
-  username,
-  bio,
-  links,
-}) => {
+const LinktreePage: NextPage<Account> = ({ name, username, bio, links }) => {
   return (
-    <Layout
-      title={name}
-      imageURL={imageURL}
-      name={name}
-      username={username}
-      bio={bio}
-    >
+    <Layout title={name} name={name} username={username} bio={bio}>
       <LinksList links={links} />
     </Layout>
   );
