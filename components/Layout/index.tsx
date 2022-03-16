@@ -4,6 +4,7 @@ import styled from "styled-components";
 import SEO from "./SEO";
 import Header from "./Header";
 import Footer from "./Footer";
+import coverImage from "../../assets/images/PingPod-2.jpeg";
 
 interface LayoutProps {
   title: string;
@@ -18,7 +19,7 @@ const Layout: FC<LayoutProps> = props => {
   return (
     <>
       <SEO title={title} />
-      <Cover img={""}>
+      <Cover img={coverImage.src}>
         <Page>
           <Container>
             <Header
