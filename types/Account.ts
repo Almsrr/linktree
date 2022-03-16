@@ -1,6 +1,7 @@
-import Link from "./Link";
+import type { Link } from "./Link";
 
 interface Account {
+  imageURL: string;
   name: string;
   username: string;
   bio: string;

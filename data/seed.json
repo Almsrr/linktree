@@ -1,7 +1,9 @@
 {
   "account": {
+    "id": 0,
     "name": "The Ping Pod!",
     "username": "pingpod",
+    "imageURL": "https://images.ctfassets.net/lbsm39fugycf/PCOfVkAc5UHVS4tsvSwiM/4b7006ee5afc8e3aa6c7501523667459/grow-podcast-profile-img__1_.png?w=192&h=192&q=100&fm=webp&fit=fill",
     "bio": "Listen, subscribe, read!",
     "links": [
       {

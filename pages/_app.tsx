@@ -1,11 +1,12 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import GlobalsCSS from "../styles/Globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="cover-bg">
+    <>
+      <GlobalsCSS />
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
 

@@ -1,47 +1,49 @@
 import type { NextPage, GetServerSideProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
 
-import styles from "../styles/Linktree.module.css";
-import profilePhoto from "../assets/images/ping-pod-profile-img.webp";
+import Account from "../types/Account";
+import Layout from "../components/Layout";
+import LinksList from "../components/LinksList";
 
-import Account from "../shared/models/Account";
-import LinksList from "../components/Links/LinksList";
-import Footer from "../components/Footer/Footer";
-
-const LinktreePage: NextPage<Account> = ({ name, bio, links }) => {
+const LinktreePage: NextPage<Account> = ({
+  imageURL,
+  name,
+  username,
+  bio,
+  links,
+}) => {
   return (
-    <>
-      <Head>
-        <title>Linktree - {name}</title>
-      </Head>
-      <div className={styles.page}>
-        <div className={styles.container}>
-          <header className={styles.header}>
-            <div className={styles.img}>
-              <Image src={profilePhoto} alt="profile-photo" />
-            </div>
-            <h1 className={styles.name}>{name}</h1>
-            <p className={styles.bio}>{bio}</p>
-          </header>
-          <main>
-            <LinksList links={links} />
-          </main>
-          <Footer />
-        </div>
-      </div>
-    </>
+    <Layout
+      title={name}
+      imageURL={imageURL}
+      name={name}
+      username={username}
+      bio={bio}
+    >
+      <LinksList links={links} />
+    </Layout>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  // Can retrieve data for specific account by username
+  // using the context object
+
+  // Read the json directly
   const fs = require("fs");
-
-  // Retrieve data for specific account by username
-  // context
-
   const rawData = await fs.readFileSync("data/seed.json");
   const data = JSON.parse(rawData);
+
+  // Make a request
+  // let data: any;
+  // try {
+  //   const res = await fetch("http://localhost:3000/api/account/0");
+  //   if (!res.ok) {
+  //     throw new Error("Something went wrong");
+  //   }
+  //   data = await res.json();
+  // } catch (err: any) {
+  //   console.log(err.message);
+  // }
 
   return {
     props: data["account"],
